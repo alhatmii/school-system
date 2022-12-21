@@ -7,25 +7,25 @@ import javax.swing.plaf.synth.SynthDesktopPaneUI;
 public class Main {
 
 	public static void main(String[] args) {
-		// Variables:
+//		 Variables:
 		int totalMarks = 0;
 
-		// initialize counter
+//		 initialize counter
 		int counter = 0;
 
-		// Calling Subjects:
+//		 Calling Subjects:
 		School Scl = new School();
 
-//		// Adding ArrayLists:
+//		 Adding ArrayLists:
 		List<Department> newDept = new ArrayList<Department>();
 
-		// Initializing Scanner:
+//		 Initializing Scanner:
 		Scanner sc = new Scanner(System.in);
 
-		// Initializing Menu:
+//		 Initializing Menu:
 		boolean i = true;
 		while (i) {
-			// Scanner Menu = new Scanner(System.in);
+//			 Scanner Menu = new Scanner(System.in);
 			System.out.println("1- To Add Detalis.");
 			System.out.println("2- To print Details.");
 			System.out.println("3- To edit Details.");
@@ -35,12 +35,12 @@ public class Main {
 
 			if (choice == 1) {
 
-				// User Input for School name using object chaining:
+//				 User Input for School name using object chaining:
 				System.out.println("Please, School Name: ");
 				String sclName = sc.next();
 				Scl.setName(sclName);
 
-				// User Input for School location using object chaining:);
+//				 User Input for School location using object chaining:);
 				System.out.println("Where it located? ");
 				String sclLoc = sc.next();
 				Scl.setLocation(sclLoc);
@@ -48,7 +48,7 @@ public class Main {
 				boolean D = true;
 				while (D) {
 
-					// User Input for Department name using object chaining:);
+//					 User Input for Department name using object chaining:);
 					Department Dp = new Department();
 					System.out.println("What is your Department?");
 					String DepName = sc.next();
@@ -58,13 +58,13 @@ public class Main {
 					boolean T = true;
 					while (T) {
 
-						// User Input for Teacher name using object chaining:
+//						 User Input for Teacher name using object chaining:
 						Teacher Tc = new Teacher();
 						System.out.println("Enter Teacher is name:");
 						String TecName = sc.next();
 						Tc.setName(TecName);
 
-						// User Input for Teacher ID using object chaining:
+//						 User Input for Teacher ID using object chaining:
 						System.out.println("Enter Teacher is ID:");
 						int TecID = sc.nextInt();
 						Tc.setId(TecID);
@@ -74,21 +74,20 @@ public class Main {
 						while (S) {
 
 							Student Std = new Student();
-							// User Input for Student name using object chaining:
+//							 User Input for Student name using object chaining:
 							System.out.println("Enter your Student name:");
 							String StdName = sc.next();
 							Std.setName(StdName);
 
-							// User Input for Student ID using object chaining:
+//							 User Input for Student ID using object chaining:
 							System.out.println("Enter  Student ID:");
 							int StdId = sc.nextInt();
 							Std.setId(StdId);
 
-							// User Input for Student Age using object chaining:
+//							 User Input for Student Age using object chaining:
 							System.out.println("Enter your Student Age:");
 							int StdAge = sc.nextInt();
 							Std.setAge(StdAge);
-//							Scl.Dp.Tc.newStu.add(Std);
 
 							boolean C = true;
 							while (C) {
@@ -96,21 +95,21 @@ public class Main {
 								Course Crs = new Course();
 								Mark Mrk = new Mark();
 
-								// User Input for Course Name using object chaining:
+//								 User Input for Course Name using object chaining:
 								System.out.println("Enter Course Name:");
 								String CrsName = sc.next();
 								Crs.setName(CrsName);
 
-								// User Input for Course ID using object chaining:
+//								 User Input for Course ID using object chaining:
 								System.out.println("Enter  Course ID:");
 								int CrsId = sc.nextInt();
 								Crs.setId(CrsId);
 
-								// User Input for Quiz Course Marks using object chaining:
+//								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Quiz Marks:");
 								int MarkQ = sc.nextInt();
 
-								// Allowing only up to 15 Quiz Marks:
+//								 Allowing only up to 15 Quiz Marks:
 								if (MarkQ <= 15) {
 									Mrk.setQuizMarks(MarkQ);
 								} else {
@@ -120,12 +119,12 @@ public class Main {
 									Mrk.setQuizMarks(MarkQ1);
 								}
 
-								// User Input for Quiz Course Marks using object chaining:
+//								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Mid Marks:");
 								int MarkM = sc.nextInt();
 								Mrk.setMidMarks(MarkM);
 
-								// Allowing only up to 30 Quiz Marks:
+//								 Allowing only up to 30 Quiz Marks:
 								if (MarkM <= 35) {
 									Mrk.setMidMarks(MarkM);
 								} else {
@@ -135,12 +134,12 @@ public class Main {
 									Mrk.setMidMarks(MarkM1);
 								}
 
-								// User Input for Quiz Course Marks using object chaining:
+//								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Final Marks:");
 								int MarkF = sc.nextInt();
 								Mrk.setFinalMarks(MarkF);
 
-								// Allowing only up to 55 Quiz Marks:
+//								 Allowing only up to 55 Quiz Marks:
 								if (MarkF <= 55) {
 									Mrk.setQuizMarks(MarkF);
 								} else {
@@ -150,14 +149,14 @@ public class Main {
 									Mrk.setFinalMarks(MarkF1);
 								}
 
-								// sum of Marks:
+//								 sum of Marks:
 								if (totalMarks <= 100) {
 									totalMarks = (MarkQ + MarkM + MarkF);
 								} else {
 
 								}
 
-								// Adding new Course:
+//								 Adding new Course:
 								System.out.println("Do you wish to add new Course?");
 								System.out.println("(Answer with yes or no)");
 								String AnsC = sc.next();
@@ -179,7 +178,7 @@ public class Main {
 
 							}
 
-							// Adding new Student:
+//							 Adding new Student:
 							System.out.println("Do you wish to add new Student?");
 							System.out.println("(Answer with yes or no)");
 							String AnsS = sc.next();
@@ -201,7 +200,7 @@ public class Main {
 
 						}
 
-						// Adding new Teacher:
+//						 Adding new Teacher:
 						System.out.println("Do you wish to add new teacher?");
 						System.out.println("(Answer with yes or no)");
 						String AnsTc = sc.next();
@@ -222,7 +221,7 @@ public class Main {
 						}
 					}
 
-					// Adding new Department:
+//					 Adding new Department:
 					System.out.println("Do you wish to add new department?");
 					System.out.println("(Answer with yes or no)");
 					String AnsD = sc.next();
@@ -244,21 +243,21 @@ public class Main {
 				}
 			}
 
-			// To Print out the data:
+//			 To Print out the data:
 			else if (choice == 2) {
 
-				// increment counter variable
+//				 increment counter variable
 				counter = counter + 1;
 
 				System.out.println("School name is " + Scl.getName());
 				System.out.println("Located on " + Scl.getLocation());
 
-				// For loop inside for loop:
+//				 For loop inside for loop:
 				for (Department D : newDept) {
 
 					System.out.println("Assigned in " + D.getName() + " Department");
 
-					// print the incremented counter variable value
+//					 print the incremented counter variable value
 					System.out.println("--------------------------------------------");
 					System.out.println("Teacher Number" + " #" + counter);
 
@@ -274,12 +273,13 @@ public class Main {
 							for (Course C : S.newCrs) {
 								System.out.println("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
 //								System.out.println("Quiz Marks of : " + C.getName() + C.getId() + " is "
-//										+ C.Mrk.getQuizMarks());
+//										+ Scl.Dp.Tc.Std.Crs.Mrk.getQuizMarks());
 //								System.out.println("Mid-Term Marks of : " + C.getName() + C.getId() + " is "
-//										+ C.Mrk.getMidMarks());
+//										+ Scl.Dp.Tc.Std.Crs.Mrk.getMidMarks());
 //								System.out.println("Final Marks of : " + C.getName() + C.getId() + " is "
-//										+ C.Mrk.getFinalMarks());
-								System.out.println("Total  Marks of : " + C.getName() + C.getId() + " is " + totalMarks);
+//										+ Scl.Dp.Tc.Std.Crs.Mrk.getFinalMarks());
+								System.out
+										.println("Total  Marks of : " + C.getName() + C.getId() + " is " + totalMarks);
 								System.out.println("--------------------------------------------");
 							}
 						}
@@ -288,7 +288,6 @@ public class Main {
 				break;
 			}
 
-			
 			// To edit the details entered:
 //			else if (choice == 3) {
 //				boolean k = true;
@@ -392,20 +391,20 @@ public class Main {
 //				}
 //			}
 
-			// Exiting the menu:
+//			 Exiting the menu:
 			else if (choice == 4) {
 				i = false;
 
 				System.out.println("See you next time!");
 			}
 
-			// When Entering larger value:
+//			 When Entering larger value:
 			else {
 				System.out.println("Re-Enter the right value.");
 			}
 
-			// Closing sc Scanner:
-			// sc.close();
+//			 Closing sc Scanner:
+//			 sc.close();
 		}
 	}
 }
