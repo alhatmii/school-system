@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthDesktopPaneUI;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -25,7 +23,7 @@ public class Main {
 //		 Initializing Menu:
 		boolean i = true;
 		while (i) {
-//			 Scanner Menu = new Scanner(System.in);
+
 			System.out.println("1- To Add Detalis.");
 			System.out.println("2- To print Details.");
 			System.out.println("3- To edit Details.");
@@ -53,7 +51,6 @@ public class Main {
 					System.out.println("What is your Department?");
 					String DepName = sc.next();
 					Dp.setName(DepName);
-//					Scl.newDep.add(Scl.Dp);
 
 					boolean T = true;
 					while (T) {
@@ -68,7 +65,6 @@ public class Main {
 						System.out.println("Enter Teacher is ID:");
 						int TecID = sc.nextInt();
 						Tc.setId(TecID);
-//						Scl.Dp.newTech.add(Tc);
 
 						boolean S = true;
 						while (S) {
@@ -272,12 +268,6 @@ public class Main {
 
 							for (Course C : S.newCrs) {
 								System.out.println("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
-//								System.out.println("Quiz Marks of : " + C.getName() + C.getId() + " is "
-//										+ Scl.Dp.Tc.Std.Crs.Mrk.getQuizMarks());
-//								System.out.println("Mid-Term Marks of : " + C.getName() + C.getId() + " is "
-//										+ Scl.Dp.Tc.Std.Crs.Mrk.getMidMarks());
-//								System.out.println("Final Marks of : " + C.getName() + C.getId() + " is "
-//										+ Scl.Dp.Tc.Std.Crs.Mrk.getFinalMarks());
 								System.out
 										.println("Total  Marks of : " + C.getName() + C.getId() + " is " + totalMarks);
 								System.out.println("--------------------------------------------");
@@ -288,7 +278,7 @@ public class Main {
 				break;
 			}
 
-			// To edit the details entered:
+//			 To edit the details entered:
 //			else if (choice == 3) {
 //				boolean k = true;
 //				while (k) {
