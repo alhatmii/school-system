@@ -347,37 +347,7 @@ public class Main {
 //					else if (edit == 8) {
 //						// User Input to edit Student Age:
 //						System.out.println("Enter your Student Age:");
-//						int StdAge = sc.nextInt();
-//						Std.setAge(StdAge);
-//					}
-//
-//					else if (edit == 9) {
-//						// User Input for Course Name:
-//						System.out.println("Enter Course Name:");
-//						String CrsName = sc.next();
-//						Crs.setName(CrsName);
-//					}
-//
-//					else if (edit == 10) {
-//						// User Input for Course ID:
-//						System.out.println("Enter  Course ID:");
-//						int CrsId = sc.nextInt();
-//						Crs.setId(CrsId);
-//					}
-//
-//					// When Exiting the menu:
-//					else if (edit == 11) {
-//						k = false;
-//
-//						System.out.println("Ready to Print!");
-//					}
-//
-//					// When Entering larger value:
-//					else {
-//						System.out.println("Re-Enter the right value.");
-//					}
-//				}
-//			}
+
 
 //			 Exiting the menu:
 			else if (choice == 3) {
