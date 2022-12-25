@@ -279,9 +279,9 @@ public class Main {
 			}
 
 //			 To edit the details entered:
-//			else if (choice == 3) {
-//				boolean k = true;
-//				while (k) {
+			else if (choice == 3) {
+				boolean k = true;
+				while (k) {
 //					// Scanner editMenu = new Scanner(System.in);
 //					System.out.println("1- To Change School Name:");
 //					System.out.println("2- To Change School Location:");
@@ -294,7 +294,40 @@ public class Main {
 //					System.out.println("9- To Change Course Name:");
 //					System.out.println("10- To Change Course ID:");
 //					System.out.println("11- Done Editing!");
-//
+
+					
+					
+//					 For loop inside for loop:
+							for (Department D : newDept) {
+								String DepEdit = sc.next();
+								if (DepEdit.equals("yes")) {
+
+//								 print the incremented counter variable value
+								System.out.println("--------------------------------------------");
+								System.out.println("Teacher Number" + " #" + counter);
+
+								for (Teacher T : D.newTech) {
+									System.out.println("Teacher is name " + T.getName());
+									System.out.println("Holding ID " + T.getId());
+
+									for (Student S : T.newStu) {
+										System.out.println("Have Student named " + S.getName());
+										System.out.println("his ID " + S.getId());
+										System.out.println("at age of " + S.getAge());
+
+										for (Course C : S.newCrs) {
+											System.out.println("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
+											System.out
+													.println("Total  Marks of : " + C.getName() + C.getId() + " is " + totalMarks);
+											System.out.println("--------------------------------------------");
+										}
+									}
+								}
+							}
+					
+//					break;
+					
+					
 //					int edit = sc.nextInt();
 //					if (edit == 1) {
 //
@@ -378,8 +411,8 @@ public class Main {
 //					else {
 //						System.out.println("Re-Enter the right value.");
 //					}
-//				}
-//			}
+				}
+			}
 
 //			 Exiting the menu:
 			else if (choice == 4) {
