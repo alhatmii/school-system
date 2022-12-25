@@ -26,7 +26,7 @@ public class Main {
 
 			System.out.println("1- To Add Detalis.");
 			System.out.println("2- To print Details.");
-			System.out.println("4- Exit");
+			System.out.println("3- Exit");
 
 			int choice = sc.nextInt();
 
@@ -277,6 +277,7 @@ public class Main {
 				break;
 			}
 
+			
 
 //			 Exiting the menu:
 			else if (choice == 3) {
