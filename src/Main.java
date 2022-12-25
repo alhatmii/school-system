@@ -274,10 +274,9 @@ public class Main {
 						}
 					}
 				}
+
 				break;
 			}
-
-			
 
 //			 Exiting the menu:
 			else if (choice == 3) {
