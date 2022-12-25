@@ -380,7 +380,7 @@ public class Main {
 //			}
 
 //			 Exiting the menu:
-			else if (choice == 4) {
+			else if (choice == 3) {
 				i = false;
 
 				System.out.println("See you next time!");
