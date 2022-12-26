@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 //		 Variables:
-		int totalMarks = 0;
+		double totalMarks = 0;
 
 //		 initialize counter
 		int counter = 0;
@@ -102,7 +102,7 @@ public class Main {
 
 //								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Quiz Marks:");
-								int MarkQ = sc.nextInt();
+								Double MarkQ = (double) sc.nextDouble();
 
 //								 Allowing only up to 15 Quiz Marks:
 								if (MarkQ <= 15) {
@@ -110,13 +110,13 @@ public class Main {
 								} else {
 
 									System.out.println("Re-Enter the Quiz Marks:");
-									int MarkQ1 = sc.nextInt();
+									Double MarkQ1 = (double) sc.nextDouble();
 									Mrk.setQuizMarks(MarkQ1);
 								}
 
 //								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Mid Marks:");
-								int MarkM = sc.nextInt();
+								Double MarkM = (double) sc.nextDouble();
 								Mrk.setMidMarks(MarkM);
 
 //								 Allowing only up to 30 Quiz Marks:
@@ -125,13 +125,13 @@ public class Main {
 								} else {
 
 									System.out.println("Re-Enter the Mid Marks:");
-									int MarkM1 = sc.nextInt();
+									Double MarkM1 = (double) sc.nextDouble();
 									Mrk.setMidMarks(MarkM1);
 								}
 
 //								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Final Marks:");
-								int MarkF = sc.nextInt();
+								Double MarkF = (double) sc.nextDouble();
 								Mrk.setFinalMarks(MarkF);
 
 //								 Allowing only up to 55 Quiz Marks:
@@ -140,7 +140,7 @@ public class Main {
 								} else {
 
 									System.out.println("Re-Enter the Final Marks:");
-									int MarkF1 = sc.nextInt();
+									Double MarkF1 = (double) sc.nextDouble();
 									Mrk.setFinalMarks(MarkF1);
 								}
 

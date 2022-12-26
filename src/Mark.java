@@ -1,36 +1,36 @@
 public class Mark {
 	// Class Mark Properties.
-	private int quizMarks;
-	private int midMarks;
-	private int finalMarks;
+	private Double quizMarks;
+	private Double midMarks;
+	private Double finalMarks;
 
 	// Setter for Quiz-Mark.
-	public int getQuizMarks() {
+	public Double getQuizMarks() {
 		return quizMarks;
 	}
 
 	// Getter for Quiz-Mark.
-	public void setQuizMarks(int quizMarks) {
+	public void setQuizMarks(Double quizMarks) {
 		this.quizMarks = quizMarks;
 	}
 
 	// Getter for Mid-Mark.
-	public int getMidMarks() {
+	public Double getMidMarks() {
 		return midMarks;
 	}
 
 	// Setter for Mid-Mark.
-	public void setMidMarks(int midMarks) {
+	public void setMidMarks(Double midMarks) {
 		this.midMarks = midMarks;
 	}
 
 	// Getter for Final-Mark.
-	public int getFinalMarks() {
+	public Double getFinalMarks() {
 		return finalMarks;
 	}
 
 	// Setter for Final-Mark.
-	public void setFinalMarks(int finalMarks) {
+	public void setFinalMarks(Double finalMarks) {
 		this.finalMarks = finalMarks;
 	}
 
