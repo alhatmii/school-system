@@ -1,10 +1,14 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Department {
 	private String Name;
 
 	// ArrayList for Teachers:
 	ArrayList<Teacher> newTech = new ArrayList<Teacher>();
+
+//	Stack of Teachers
+	Stack<Teacher> TecSta = new Stack<Teacher>();
 
 	// Object chaining to Teacher:
 	Teacher Tc = new Teacher();
@@ -23,7 +27,7 @@ public class Department {
 	public ArrayList<Teacher> getNewTech() {
 		return newTech;
 	}
-	
+
 	// Setter of new Teacher list
 	public void setNewTech(ArrayList<Teacher> newTech) {
 		this.newTech = newTech;

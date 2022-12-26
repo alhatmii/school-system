@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Course {
 
@@ -8,6 +9,8 @@ public class Course {
 	// ArrayList for Teachers:
 	ArrayList<Mark> newMark = new ArrayList<Mark>();
 
+	// Stack of Marks
+	Stack<Mark> MrkSta = new Stack<Mark>();
 
 	// Object chaining to Mark:
 	Mark Mrk = new Mark();

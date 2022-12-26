@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
 
@@ -17,6 +18,10 @@ public class Main {
 //		 Adding ArrayLists:
 		List<Department> newDept = new ArrayList<Department>();
 
+//		Stack of Departments
+		Stack<Department> DepSta = new Stack<Department>();
+		
+		
 //		 Initializing Scanner:
 		Scanner sc = new Scanner(System.in);
 
@@ -26,7 +31,8 @@ public class Main {
 
 			System.out.println("1- To Add Detalis.");
 			System.out.println("2- To print Details.");
-			System.out.println("3- Exit");
+			System.out.println("3- To Print Using Stacks.");
+			System.out.println("4- Exit");
 
 			int choice = sc.nextInt();
 
@@ -156,7 +162,8 @@ public class Main {
 								System.out.println("(Answer with yes or no)");
 								String AnsC = sc.next();
 								Std.newCrs.add(Crs);
-
+								Std.CrsSta.push(Crs);
+								
 								if (AnsC.equals("yes")) {
 									C = true;
 
@@ -178,6 +185,7 @@ public class Main {
 							System.out.println("(Answer with yes or no)");
 							String AnsS = sc.next();
 							Tc.newStu.add(Std);
+							Tc.StdSta.push(Std);
 
 							if (AnsS.equals("yes")) {
 								S = true;
@@ -200,6 +208,7 @@ public class Main {
 						System.out.println("(Answer with yes or no)");
 						String AnsTc = sc.next();
 						Dp.newTech.add(Tc);
+						Dp.TecSta.push(Tc);
 
 						if (AnsTc.equals("yes")) {
 							T = true;
@@ -221,6 +230,7 @@ public class Main {
 					System.out.println("(Answer with yes or no)");
 					String AnsD = sc.next();
 					newDept.add(Dp);
+					DepSta.push(Dp);
 
 					if (AnsD.equals("yes")) {
 						D = true;
@@ -277,9 +287,51 @@ public class Main {
 
 				break;
 			}
+			
+//			 To Print out the data:
+			else if (choice == 3) {
+
+//				 increment counter variable
+				counter = counter + 1;
+
+				System.out.println("School name is " + Scl.getName());
+				System.out.println("Located on " + Scl.getLocation());
+
+//				 For loop inside for loop:
+				for (Department D : DepSta) {
+
+					System.out.println("Assigned in " + DepSta.pop() + " Department");
+
+//					 print the incremented counter variable value
+					System.out.println("--------------------------------------------");
+					System.out.println("Teacher Number" + " #" + counter);
+
+					for (Teacher T : D.TecSta) {
+						System.out.println("Teacher is name " + D.TecSta.pop());
+						System.out.println("Holding ID " + D.TecSta.pop());
+
+						for (Student S : T.StdSta) {
+							System.out.println("Have Student named " + T.StdSta.pop());
+							System.out.println("his ID " + T.StdSta.pop());
+							System.out.println("at age of " + T.StdSta.pop());
+
+							for (Course C : S.CrsSta) {
+								System.out.println("Assigned to teach " + S.CrsSta.pop() + " Holding ID " + S.CrsSta.pop());
+								System.out
+										.println("Total  Marks of : " + S.CrsSta.pop() + S.CrsSta.pop() + " is " + totalMarks);
+								System.out.println("--------------------------------------------");
+							}
+						}
+					}
+				}
+
+				break;
+			}	
+			
+			
 
 //			 Exiting the menu:
-			else if (choice == 3) {
+			else if (choice == 4) {
 				i = false;
 
 				System.out.println("See you next time!");

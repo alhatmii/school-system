@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Teacher {
 	private String Name;
@@ -6,6 +7,9 @@ public class Teacher {
 
 	// Setter ArrayList for Students:
 	ArrayList<Student> newStu = new ArrayList<Student>();
+
+//	Stack of Students
+	Stack<Student> StdSta = new Stack<Student>();
 
 	// Getter of Student ArrayList:
 	public ArrayList<Student> getNewStu() {

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Student {
 
@@ -9,6 +10,9 @@ public class Student {
 
 	// ArrayList for Course:
 	ArrayList<Course> newCrs = new ArrayList<Course>();
+
+	// Stack of Course
+	Stack<Course> CrsSta = new Stack<Course>();
 
 	// Object chaining to Course:
 	Course Crs = new Course();
@@ -32,7 +36,7 @@ public class Student {
 	public void setNewCrs(ArrayList<Course> newCrs) {
 		this.newCrs = newCrs;
 	}
-	
+
 	// Getter of Object Chaining for Courses:
 	public Course getCrs() {
 		return Crs;
