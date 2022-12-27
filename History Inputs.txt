@@ -1,0 +1,14 @@
+
+School name is 1
+Located on 1
+Assigned in 1 Department
+--------------------------------------------
+Teacher Number #1
+Teacher is name 1
+Holding ID 1
+Have Student named 1
+his ID 1
+at age of 1
+Assigned to teach 1 Holding ID 1
+Total  Marks of : 11 is 3.0
+--------------------------------------------

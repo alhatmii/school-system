@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,6 +26,8 @@ public class Main {
 //		 Initializing Scanner:
 		Scanner sc = new Scanner(System.in);
 
+//		 Initializing Data transfer to .txt file:
+
 //		 Initializing Menu:
 		boolean i = true;
 		while (i) {
@@ -31,7 +35,8 @@ public class Main {
 			System.out.println("1- To Add Detalis.");
 			System.out.println("2- To print Details.");
 			System.out.println("3- To Print Departments Using Stacks.");
-			System.out.println("4- Exit");
+			System.out.println("4- Transfer the Inputs in (.txt) File.");
+			System.out.println("5- Exit");
 
 			int choice = sc.nextInt();
 
@@ -154,10 +159,10 @@ public class Main {
 //								 sum of Marks:
 								if (totalMarks <= 100) {
 									totalMarks = (MarkQ + MarkM + MarkF);
+
 								} else {
 
 								}
-
 //								 Adding new Course:
 								System.out.println("Do you wish to add new Course?");
 								System.out.println("(Answer with yes or no)");
@@ -250,7 +255,9 @@ public class Main {
 						System.out.println("Enter valid Answer!");
 						D = false;
 					}
+
 				}
+
 			}
 
 //			 To Print out the data:
@@ -305,12 +312,72 @@ public class Main {
 				for (String Dp : DepSta) {
 
 					System.out.println(Dp + " Department");
-				}
+					System.out.println("\n");
 
+				}
+			}
+
+			else if (choice == 4) {
+
+				try {
+					FileWriter MyInputs = new FileWriter("History Inputs.txt");
+//					 increment counter variable
+					counter = counter + 1;
+
+					MyInputs.write("\n");
+					MyInputs.write("School name is " + Scl.getName());
+					MyInputs.write("\n");
+					MyInputs.write("Located on " + Scl.getLocation());
+					MyInputs.write("\n");
+//					 For loop inside for loop:
+					for (Department D1 : newDept) {
+
+						MyInputs.write("Assigned in " + D1.getName() + " Department");
+						MyInputs.write("\n");
+//						 print the incremented counter variable value
+						MyInputs.write("--------------------------------------------");
+						MyInputs.write("\n");
+						MyInputs.write("Teacher Number" + " #" + counter);
+						MyInputs.write("\n");
+						for (Teacher T : D1.newTech) {
+							MyInputs.write("Teacher is name " + T.getName());
+							MyInputs.write("\n");
+							MyInputs.write("Holding ID " + T.getId());
+							MyInputs.write("\n");
+
+							for (Student S : T.newStu) {
+								MyInputs.write("Have Student named " + S.getName());
+								MyInputs.write("\n");
+								MyInputs.write("his ID " + S.getId());
+								MyInputs.write("\n");
+								MyInputs.write("at age of " + S.getAge());
+								MyInputs.write("\n");
+
+								for (Course C : S.newCrs) {
+									MyInputs.write("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
+									MyInputs.write("\n");
+									MyInputs.write(
+											"Total  Marks of : " + C.getName() + C.getId() + " is " + totalMarks);
+									MyInputs.write("\n");
+									MyInputs.write("--------------------------------------------");
+									MyInputs.write("\n");
+								}
+							}
+						}
+					}
+					MyInputs.close();
+					System.out.println("Successfully wrote to the file.");
+					System.out.println("\n");
+
+				} catch (IOException e) {
+					System.out.println("An error occurred.");
+					System.out.println("\n");
+					e.printStackTrace();
+				}
 			}
 
 //			 Exiting the menu:
-			else if (choice == 4) {
+			else if (choice == 5) {
 				i = false;
 
 				System.out.println("See you next time!");
