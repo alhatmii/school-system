@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +10,7 @@ import java.util.Stack;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 //		 Variables:
 		double totalMarks = 0;
 
@@ -36,7 +39,8 @@ public class Main {
 			System.out.println("2- To print Details.");
 			System.out.println("3- To Print Departments Using Stacks.");
 			System.out.println("4- Transfer the Inputs in (.txt) File.");
-			System.out.println("5- Exit");
+			System.out.println("5- Open History Updated Inputs.");
+			System.out.println("6- Exit");
 
 			int choice = sc.nextInt();
 
@@ -376,8 +380,27 @@ public class Main {
 				}
 			}
 
-//			 Exiting the menu:
 			else if (choice == 5) {
+				// File path
+				File ReadFile = new File("C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
+
+				// Creating an object of BufferedReader class
+				BufferedReader br = new BufferedReader(new FileReader(ReadFile));
+
+				// Declaring a string variable
+				String st;
+
+				// Condition holds true till
+				// there is character in a string
+				while ((st = br.readLine()) != null)
+
+					// Print the string
+					System.out.println(st);
+
+			}
+
+//			 Exiting the menu:
+			else if (choice == 6) {
 				i = false;
 
 				System.out.println("See you next time!");
