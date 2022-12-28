@@ -40,7 +40,8 @@ public class Main {
 			System.out.println("3- To Print Departments Using Stacks.");
 			System.out.println("4- Transfer the Inputs in (.txt) File.");
 			System.out.println("5- Open History Updated Inputs.");
-			System.out.println("6- Exit");
+			System.out.println("6- Search Word In Exsisting file.");
+			System.out.println("7- Exit");
 
 			int choice = sc.nextInt();
 
@@ -381,26 +382,85 @@ public class Main {
 			}
 
 			else if (choice == 5) {
-				// File path
+//				 File path
 				File ReadFile = new File("C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
 
-				// Creating an object of BufferedReader class
+//				 Creating an object of BufferedReader class
 				BufferedReader br = new BufferedReader(new FileReader(ReadFile));
 
-				// Declaring a string variable
+//				 Declaring a string variable
 				String st;
 
-				// Condition holds true till
-				// there is character in a string
+//				 Condition holds true till
+//				 there is character in a string
 				while ((st = br.readLine()) != null)
 
-					// Print the string
+//				 Print the string
 					System.out.println(st);
 
 			}
 
-//			 Exiting the menu:
 			else if (choice == 6) {
+//				Creation of File Descriptor for input file
+//				File SearchWord = new File("History Inputs.txt"); 
+
+				File SearchWord = new File(
+						"C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
+
+//				Intialize the word Array
+				String[] words = null;
+
+//			    Creation of File Reader object
+				FileReader fr = new FileReader(SearchWord);
+
+//				Creation of BufferedReader object
+				BufferedReader br = new BufferedReader(fr);
+
+				String s;
+
+				System.out.println("Please Enter the word you want to search:");
+//			    Input word to be searched
+				String WordInput = sc.next();
+
+//			    Intialize the word to zero
+				int count = 0;
+
+//			    Reading Content from the file
+				while ((s = br.readLine()) != null) {
+
+//			   	Split the word using space
+					words = s.split(" ");
+
+//			 	Search for the given word
+					for (String word : words) {
+						if (word.equals(WordInput)) {
+							count++;
+						}
+					}
+				}
+
+//			    Check for count not equal to zero
+				if (count != 0) {
+					System.out.println("\n");
+					System.out.println("--------------------------------------------------");
+					System.out.println("The given word is present for " + count + " Times in the file");
+					System.out.println("--------------------------------------------------");
+					System.out.println("\n");
+
+				} else {
+					System.out.println("\n");
+					System.out.println("--------------------------------------------------");
+					System.out.println("The given word is not present in the file");
+					System.out.println("--------------------------------------------------");
+					System.out.println("\n");
+
+				}
+
+				fr.close();
+			}
+
+//			 Exiting the menu:
+			else if (choice == 7) {
 				i = false;
 
 				System.out.println("See you next time!");
