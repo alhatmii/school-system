@@ -116,7 +116,7 @@ public class Main {
 								System.out.println("Enter  Course ID:");
 								int CrsId = sc.nextInt();
 								Crs.setId(CrsId);
-
+      
 //								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Quiz Marks:");
 								Double MarkQ = (double) sc.nextDouble();
@@ -296,7 +296,7 @@ public class Main {
 							for (Course C : S.newCrs) {
 								System.out.println("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
 								System.out
-										.println("Total  Marks of : " + C.getName() + C.getId() + " is " + totalMarks);
+										.println("Total  Marks of : " + C.getName() + " " + C.getId() + " is " + totalMarks);
 								System.out.println("--------------------------------------------");
 								System.out.println("\n");
 							}
@@ -312,12 +312,12 @@ public class Main {
 				System.out.println("School name is " + Scl.getName());
 				System.out.println("Located on " + Scl.getLocation());
 				System.out.println("This School Has:");
+				System.out.println("\n");
 
 //				 For loop inside for loop:
 				for (String Dp : DepSta) {
 
 					System.out.println(Dp + " Department");
-					System.out.println("\n");
 
 				}
 			}
@@ -433,7 +433,7 @@ public class Main {
 
 //			 	Search for the given word
 					for (String word : words) {
-						if (word.equals(WordInput)) {
+						if (word.equalsIgnoreCase(WordInput)) {
 							count++;
 						}
 					}
@@ -443,7 +443,8 @@ public class Main {
 				if (count != 0) {
 					System.out.println("\n");
 					System.out.println("--------------------------------------------------");
-					System.out.println("The given word is present for " + count + " Times in the file");
+					System.out.println(
+							"The given word |" + WordInput + "| is present for (" + count + ") Times in the file");
 					System.out.println("--------------------------------------------------");
 					System.out.println("\n");
 

@@ -1,58 +1,77 @@
 
 School name is CodeLine
-Located on TechnoPark,Ghala
-Assigned in Trainig Department
+Located on TechnoPark_Ghala
+Assigned in Training Department
 --------------------------------------------
 Teacher Number #1
 Teacher is name Afrah
 Holding ID 121
-Have Student named Yahya
-his ID 22
-at age of 26
-Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
---------------------------------------------
 Have Student named Mohammed
-his ID 14
+his ID 21
 at age of 28
 Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
+Total  Marks of : JAVA2022 is 78.0
 --------------------------------------------
-Have Student named Sami
-his ID 16
-at age of 27
-Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
---------------------------------------------
-Have Student named Shaima
+Have Student named Yahya
 his ID 23
-at age of 25
-Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
---------------------------------------------
-Have Student named Fahima
-his ID 9
-at age of 25
-Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
---------------------------------------------
-Teacher is name Fatima
-Holding ID 122
-Have Student named Malak
-his ID 19
 at age of 26
 Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
+Total  Marks of : JAVA2022 is 78.0
 --------------------------------------------
-Have Student named Adnan
-his ID 1
-at age of 24
+Have Student named Sadiq
+his ID 19
+at age of 27
 Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
+Total  Marks of : JAVA2022 is 78.0
 --------------------------------------------
 Have Student named Majid
+his ID 17
+at age of 24
+Assigned to teach JAVA Holding ID 2022
+Total  Marks of : JAVA2022 is 78.0
+--------------------------------------------
+Teacher is name Fatima
+Holding ID 212
+Have Student named Fahima
+his ID 4
+at age of 25
+Assigned to teach JAVA Holding ID 2022
+Total  Marks of : JAVA2022 is 78.0
+--------------------------------------------
+Have Student named Shaima
+his ID 24
+at age of 26
+Assigned to teach JAVA Holding ID 2022
+Total  Marks of : JAVA2022 is 78.0
+--------------------------------------------
+Have Student named Malak
 his ID 15
 at age of 25
 Assigned to teach JAVA Holding ID 2022
-Total  Marks of : JAVA2022 is 45.0
+Total  Marks of : JAVA2022 is 78.0
+--------------------------------------------
+Teacher is name Damiyel
+Holding ID 323
+Have Student named Sara
+his ID 15
+at age of 24
+Assigned to teach JAVA Holding ID 2022
+Total  Marks of : JAVA2022 is 78.0
+--------------------------------------------
+Have Student named Said
+his ID 12
+at age of 26
+Assigned to teach JAVA Holding ID 2022
+Total  Marks of : JAVA2022 is 78.0
+--------------------------------------------
+Assigned in HR Department
+--------------------------------------------
+Teacher Number #1
+Teacher is name Suha
+Holding ID 125
+Have Student named Arwa
+his ID 1
+at age of 27
+Assigned to teach JAVA Holding ID 2022
+Total  Marks of : JAVA2022 is 78.0
 --------------------------------------------
