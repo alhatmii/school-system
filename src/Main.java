@@ -1,9 +1,12 @@
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -459,16 +462,32 @@ public class Main {
 
 //			 To Print out the data:
 			else if (choice == 6) {
-				File ReadFile = new File("C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
-				FileOutputStream Encry = new FileOutputStream("Encrypted File.txt");
-				ObjectOutputStream ABC = new ObjectOutputStream(Encry);
-				ABC.writeObject(ReadFile);
-				ABC.close();
-				Encry.close();
+				try {
+					File ReadFile = new File(
+							"C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
+					FileOutputStream EncryOut = new FileOutputStream("Encrypted File.txt");
+					ObjectOutputStream ABC = new ObjectOutputStream(EncryOut);
+					ABC.writeObject(ReadFile);
+					ABC.close();
+					EncryOut.close();
 
-				System.out.println("\n");
-				System.out.println("The DATA Serialization in Encrypted File.txt");
-				System.out.println("\n");
+					System.out.println("\n");
+					System.out.println("The DATA Serialization in Encrypted File.txt");
+					System.out.println("\n");
+					FileInputStream EncryIn = new FileInputStream("Encrypted File.txt");
+					ObjectInputStream In = new ObjectInputStream(EncryIn);
+					ReadFile = (File) In.readObject();
+					In.close();
+					EncryIn.close();
+
+				} catch (IOException z) {
+					z.printStackTrace();
+				} catch (ClassNotFoundException y) {
+					System.out.println("Class not found");
+					y.printStackTrace();
+					return;
+
+				}
 
 			}
 
