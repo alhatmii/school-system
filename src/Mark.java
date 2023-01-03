@@ -11,14 +11,9 @@ public class Mark {
 
 	// Getter for Quiz-Mark.
 	public void setQuizMarks(Double quizMarks) {
-		if (quizMarks <= 15) {
-			setQuizMarks(quizMarks);
-		} else {
-			
-		}
+
 		this.quizMarks = quizMarks;
 	}
-
 
 	// Getter for Mid-Mark.
 	public Double getMidMarks() {
@@ -27,11 +22,6 @@ public class Mark {
 
 	// Setter for Mid-Mark.
 	public void setMidMarks(Double midMarks) {
-		if (midMarks <= 35) {
-			setMidMarks(midMarks);
-		} else {
-			
-		}
 		this.midMarks = midMarks;
 	}
 
@@ -42,11 +32,6 @@ public class Mark {
 
 	// Setter for Final-Mark.
 	public void setFinalMarks(Double finalMarks) {
-		if (finalMarks <= 55) {
-			setFinalMarks(finalMarks);
-		} else {
-			
-		}
 		this.finalMarks = finalMarks;
 	}
 

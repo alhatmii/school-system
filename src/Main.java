@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -36,11 +38,11 @@ public class Main {
 		while (i) {
 
 			System.out.println("1- To Add Detalis.");
-			System.out.println("2- To print Details.");
-			System.out.println("3- To Print Departments Using Stacks.");
-			System.out.println("4- Transfer the Inputs in (.txt) File.");
-			System.out.println("5- Open History Updated Inputs.");
-			System.out.println("6- Search Word In Exsisting file.");
+			System.out.println("2- To print Details & Departments Using Stacks.");
+			System.out.println("3- Transfer the Inputs in (.txt) File.");
+			System.out.println("4- Open History Updated Inputs.");
+			System.out.println("5- Search Word In Exsisting file.");
+			System.out.println("6- Encrypting new data from Exsisting file.");
 			System.out.println("7- Exit");
 
 			int choice = sc.nextInt();
@@ -116,7 +118,7 @@ public class Main {
 								System.out.println("Enter  Course ID:");
 								int CrsId = sc.nextInt();
 								Crs.setId(CrsId);
-      
+
 //								 User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Quiz Marks:");
 								Double MarkQ = (double) sc.nextDouble();
@@ -275,6 +277,17 @@ public class Main {
 				System.out.println("School name is " + Scl.getName());
 				System.out.println("Located on " + Scl.getLocation());
 
+				System.out.println("This School Has:");
+				System.out.println("\n");
+
+//				 For loop inside for loop:
+				for (String Dp : DepSta) {
+
+					System.out.println(Dp + " Department");
+
+				}
+
+				System.out.println("\n");
 //				 For loop inside for loop:
 				for (Department D : newDept) {
 
@@ -295,8 +308,8 @@ public class Main {
 
 							for (Course C : S.newCrs) {
 								System.out.println("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
-								System.out
-										.println("Total  Marks of : " + C.getName() + " " + C.getId() + " is " + totalMarks);
+								System.out.println(
+										"Total  Marks of : " + C.getName() + " " + C.getId() + " is " + totalMarks);
 								System.out.println("--------------------------------------------");
 								System.out.println("\n");
 							}
@@ -306,23 +319,7 @@ public class Main {
 
 			}
 
-//			 To Print out the data:
 			else if (choice == 3) {
-				System.out.println("\n");
-				System.out.println("School name is " + Scl.getName());
-				System.out.println("Located on " + Scl.getLocation());
-				System.out.println("This School Has:");
-				System.out.println("\n");
-
-//				 For loop inside for loop:
-				for (String Dp : DepSta) {
-
-					System.out.println(Dp + " Department");
-
-				}
-			}
-
-			else if (choice == 4) {
 
 				try {
 					FileWriter MyInputs = new FileWriter("History Inputs.txt");
@@ -381,7 +378,7 @@ public class Main {
 				}
 			}
 
-			else if (choice == 5) {
+			else if (choice == 4) {
 //				 File path
 				File ReadFile = new File("C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
 
@@ -400,7 +397,7 @@ public class Main {
 
 			}
 
-			else if (choice == 6) {
+			else if (choice == 5) {
 //				Creation of File Descriptor for input file
 //				File SearchWord = new File("History Inputs.txt"); 
 
@@ -458,6 +455,21 @@ public class Main {
 				}
 
 				fr.close();
+			}
+
+//			 To Print out the data:
+			else if (choice == 6) {
+				File ReadFile = new File("C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
+				FileOutputStream Encry = new FileOutputStream("Encrypted File.txt");
+				ObjectOutputStream ABC = new ObjectOutputStream(Encry);
+				ABC.writeObject(ReadFile);
+				ABC.close();
+				Encry.close();
+
+				System.out.println("\n");
+				System.out.println("The DATA Serialization in Encrypted File.txt");
+				System.out.println("\n");
+
 			}
 
 //			 Exiting the menu:
