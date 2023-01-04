@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -21,9 +20,15 @@ public class Main {
 
 //		 initialize counter
 		int counter = 0;
+		int counter5 = 0;
 
 //		 Calling Subjects:
 		School Scl = new School();
+		Department Dp1 = new Department();
+		Teacher Tc1 = new Teacher();
+		Student Std1 = new Student();
+		Course Crs1 = new Course();
+		Mark Mrk1 = new Mark();
 
 //		 Adding ArrayLists:
 		List<Department> newDept = new ArrayList<Department>();
@@ -51,8 +56,8 @@ public class Main {
 			int choice = sc.nextInt();
 
 			if (choice == 1) {
-
 				System.out.println("\n");
+
 //				 User Input for School name using object chaining:
 				System.out.println("Please, School Name: ");
 				String sclName = sc.next();
@@ -65,9 +70,10 @@ public class Main {
 
 				boolean D = true;
 				while (D) {
+					Department Dp = new Department();
+					Dp1 = Dp;
 
 //					 User Input for Department name using object chaining:);
-					Department Dp = new Department();
 					System.out.println("What is your Department?");
 					String DepName = sc.next();
 					DepSta.push(DepName);
@@ -76,22 +82,24 @@ public class Main {
 					boolean T = true;
 					while (T) {
 
-//						 User Input for Teacher name using object chaining:
+//						User Input for Teacher name using object chaining:
 						Teacher Tc = new Teacher();
+						Tc1 = Tc;
+
 						System.out.println("Enter Teacher is name:");
 						String TecName = sc.next();
 						Tc.setName(TecName);
 
-//						 User Input for Teacher ID using object chaining:
+//						User Input for Teacher ID using object chaining:
 						System.out.println("Enter Teacher is ID:");
 						int TecID = sc.nextInt();
 						Tc.setId(TecID);
 
 						boolean S = true;
 						while (S) {
-
 							Student Std = new Student();
-//							 User Input for Student name using object chaining:
+							Std1 = Std;
+//							User Input for Student name using object chaining:
 							System.out.println("Enter your Student name:");
 							String StdName = sc.next();
 							Std.setName(StdName);
@@ -111,6 +119,8 @@ public class Main {
 
 								Course Crs = new Course();
 								Mark Mrk = new Mark();
+								Crs1 = Crs;
+								Mrk1 = Mrk;
 
 //								 User Input for Course Name using object chaining:
 								System.out.println("Enter Course Name:");
@@ -284,9 +294,9 @@ public class Main {
 				System.out.println("\n");
 
 //				 For loop inside for loop:
-				for (String Dp : DepSta) {
+				for (String DpS : DepSta) {
 
-					System.out.println(Dp + " Department");
+					System.out.println(DpS + " Department");
 
 				}
 
@@ -463,11 +473,17 @@ public class Main {
 //			 To Print out the data:
 			else if (choice == 6) {
 				try {
-					File ReadFile = new File(
-							"C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
+//					File ReadFile = new File(
+//							"C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
+
 					FileOutputStream EncryOut = new FileOutputStream("Encrypted File.txt");
 					ObjectOutputStream ABC = new ObjectOutputStream(EncryOut);
-					ABC.writeObject(ReadFile);
+					ABC.writeObject(Scl);
+					ABC.writeObject(newDept);
+					ABC.writeObject(Dp1.newTech);
+					ABC.writeObject(Tc1.newStu);
+					ABC.writeObject(Std1.newCrs);
+					ABC.writeObject(Crs1.newMark);
 					ABC.close();
 					EncryOut.close();
 
@@ -476,9 +492,48 @@ public class Main {
 					System.out.println("\n");
 					FileInputStream EncryIn = new FileInputStream("Encrypted File.txt");
 					ObjectInputStream In = new ObjectInputStream(EncryIn);
-					ReadFile = (File) In.readObject();
+					Scl = (School) In.readObject();
+					newDept = (ArrayList) In.readObject();
+					Dp1.newTech = (ArrayList) In.readObject();
+					Tc1.newStu = (ArrayList) In.readObject();
+					Std1.newCrs = (ArrayList) In.readObject();
+					Crs1.newMark = (ArrayList) In.readObject();
+
 					In.close();
 					EncryIn.close();
+
+//					 increment counter variable
+					counter5 = counter5 + 1;
+
+					System.out.println("\n");
+//					 For loop inside for loop:
+					for (Department D : newDept) {
+
+						System.out.println("Assigned in " + D.getName() + " Department");
+
+//						 print the incremented counter variable value
+						System.out.println("--------------------------------------------");
+						System.out.println("Teacher Number" + " #" + counter5);
+
+						for (Teacher T : D.newTech) {
+							System.out.println("Teacher is name " + T.getName());
+							System.out.println("Holding ID " + T.getId());
+
+							for (Student S : T.newStu) {
+								System.out.println("Have Student named " + S.getName());
+								System.out.println("his ID " + S.getId());
+								System.out.println("at age of " + S.getAge());
+
+								for (Course C : S.newCrs) {
+									System.out.println("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
+									System.out.println(
+											"Total  Marks of : " + C.getName() + " " + C.getId() + " is " + totalMarks);
+									System.out.println("--------------------------------------------");
+									System.out.println("\n");
+								}
+							}
+						}
+					}
 
 				} catch (IOException z) {
 					z.printStackTrace();

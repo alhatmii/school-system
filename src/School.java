@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class School {
+public class School implements Serializable {
 	private String Name;
 	private String Location;
 

@@ -1,4 +1,6 @@
-public class Mark {
+import java.io.Serializable;
+
+public class Mark implements Serializable {
 	// Class Mark Properties.
 	private Double quizMarks;
 	private Double midMarks;
