@@ -15,14 +15,14 @@ import java.util.Stack;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-//		 Variables:
+//		Variables:
 		double totalMarks = 0;
 
-//		 initialize counter
+//		initialize counter
 		int counter = 0;
 		int counter5 = 0;
 
-//		 Calling Subjects:
+//		Calling Subjects:
 		School Scl = new School();
 		Department Dp1 = new Department();
 		Teacher Tc1 = new Teacher();
@@ -30,18 +30,16 @@ public class Main {
 		Course Crs1 = new Course();
 		Mark Mrk1 = new Mark();
 
-//		 Adding ArrayLists:
+//		Adding ArrayLists:
 		List<Department> newDept = new ArrayList<Department>();
 
 //		Stack of Departments
 		Stack<String> DepSta = new Stack<String>();
 
-//		 Initializing Scanner:
+//		Initializing Scanner:
 		Scanner sc = new Scanner(System.in);
 
-//		 Initializing Data transfer to .txt file:
-
-//		 Initializing Menu:
+//		Initializing Menu:
 		boolean i = true;
 		while (i) {
 
@@ -58,22 +56,23 @@ public class Main {
 			if (choice == 1) {
 				System.out.println("\n");
 
-//				 User Input for School name using object chaining:
+//				User Input for School name using object chaining:
 				System.out.println("Please, School Name: ");
 				String sclName = sc.next();
 				Scl.setName(sclName);
 
-//				 User Input for School location using object chaining:);
+//				User Input for School location using object chaining:);
 				System.out.println("Where it located? ");
 				String sclLoc = sc.next();
 				Scl.setLocation(sclLoc);
 
 				boolean D = true;
 				while (D) {
+//					Calling Subjects & equalize it:
 					Department Dp = new Department();
 					Dp1 = Dp;
 
-//					 User Input for Department name using object chaining:);
+//					User Input for Department name using object chaining:);
 					System.out.println("What is your Department?");
 					String DepName = sc.next();
 					DepSta.push(DepName);
@@ -82,7 +81,7 @@ public class Main {
 					boolean T = true;
 					while (T) {
 
-//						User Input for Teacher name using object chaining:
+//						Calling Subjects & equalize it:
 						Teacher Tc = new Teacher();
 						Tc1 = Tc;
 
@@ -97,19 +96,21 @@ public class Main {
 
 						boolean S = true;
 						while (S) {
+//							Calling Subjects & equalize it:
 							Student Std = new Student();
 							Std1 = Std;
+
 //							User Input for Student name using object chaining:
 							System.out.println("Enter your Student name:");
 							String StdName = sc.next();
 							Std.setName(StdName);
 
-//							 User Input for Student ID using object chaining:
+//							User Input for Student ID using object chaining:
 							System.out.println("Enter  Student ID:");
 							int StdId = sc.nextInt();
 							Std.setId(StdId);
 
-//							 User Input for Student Age using object chaining:
+//							User Input for Student Age using object chaining:
 							System.out.println("Enter your Student Age:");
 							int StdAge = sc.nextInt();
 							Std.setAge(StdAge);
@@ -117,26 +118,27 @@ public class Main {
 							boolean C = true;
 							while (C) {
 
+//								Calling Subjects & equalize it:
 								Course Crs = new Course();
 								Mark Mrk = new Mark();
 								Crs1 = Crs;
 								Mrk1 = Mrk;
 
-//								 User Input for Course Name using object chaining:
+//								User Input for Course Name using object chaining:
 								System.out.println("Enter Course Name:");
 								String CrsName = sc.next();
 								Crs.setName(CrsName);
 
-//								 User Input for Course ID using object chaining:
+//								User Input for Course ID using object chaining:
 								System.out.println("Enter  Course ID:");
 								int CrsId = sc.nextInt();
 								Crs.setId(CrsId);
 
-//								 User Input for Quiz Course Marks using object chaining:
+//								User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Quiz Marks:");
 								Double MarkQ = (double) sc.nextDouble();
 
-//								 Allowing only up to 15 Quiz Marks:
+//								Allowing only up to 15 Quiz Marks:
 								if (MarkQ <= 15) {
 									Mrk.setQuizMarks(MarkQ);
 								} else {
@@ -146,12 +148,12 @@ public class Main {
 									Mrk.setQuizMarks(MarkQ1);
 								}
 
-//								 User Input for Quiz Course Marks using object chaining:
+//								User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Mid Marks:");
 								Double MarkM = (double) sc.nextDouble();
 								Mrk.setMidMarks(MarkM);
 
-//								 Allowing only up to 30 Quiz Marks:
+//								Allowing only up to 30 Quiz Marks:
 								if (MarkM <= 35) {
 									Mrk.setMidMarks(MarkM);
 								} else {
@@ -161,12 +163,12 @@ public class Main {
 									Mrk.setMidMarks(MarkM1);
 								}
 
-//								 User Input for Quiz Course Marks using object chaining:
+//								User Input for Quiz Course Marks using object chaining:
 								System.out.println("Enter Final Marks:");
 								Double MarkF = (double) sc.nextDouble();
 								Mrk.setFinalMarks(MarkF);
 
-//								 Allowing only up to 55 Quiz Marks:
+//								Allowing only up to 55 Quiz Marks:
 								if (MarkF <= 55) {
 									Mrk.setQuizMarks(MarkF);
 								} else {
@@ -176,14 +178,14 @@ public class Main {
 									Mrk.setFinalMarks(MarkF1);
 								}
 
-//								 sum of Marks:
+//								sum of Marks:
 								if (totalMarks <= 100) {
 									totalMarks = (MarkQ + MarkM + MarkF);
 
 								} else {
 
 								}
-//								 Adding new Course:
+//								Adding new Course:
 								System.out.println("Do you wish to add new Course?");
 								System.out.println("(Answer with yes or no)");
 								String AnsC = sc.next();
@@ -207,7 +209,7 @@ public class Main {
 
 							}
 
-//							 Adding new Student:
+//							Adding new Student:
 							System.out.println("Do you wish to add new Student?");
 							System.out.println("(Answer with yes or no)");
 							String AnsS = sc.next();
@@ -231,7 +233,7 @@ public class Main {
 
 						}
 
-//						 Adding new Teacher:
+//						Adding new Teacher:
 						System.out.println("Do you wish to add new teacher?");
 						System.out.println("(Answer with yes or no)");
 						String AnsTc = sc.next();
@@ -253,8 +255,7 @@ public class Main {
 							T = false;
 						}
 					}
-
-//					 Adding new Department:
+//					Adding new Department:
 					System.out.println("Do you wish to add new department?");
 					System.out.println("(Answer with yes or no)");
 					String AnsD = sc.next();
@@ -263,9 +264,7 @@ public class Main {
 					if (AnsD.equals("yes")) {
 						D = true;
 
-					}
-
-					else if (AnsD.equals("no")) {
+					} else if (AnsD.equals("no")) {
 						System.out.println("Thanks for adding departments details.");
 						System.out.println("--------------------------------------------");
 						System.out.println("\n");
@@ -280,10 +279,10 @@ public class Main {
 
 			}
 
-//			 To Print out the data:
+//			To Print out the data:
 			else if (choice == 2) {
 
-//				 increment counter variable
+//				increment counter variable
 				counter = counter + 1;
 
 				System.out.println("\n");
@@ -293,7 +292,7 @@ public class Main {
 				System.out.println("This School Has:");
 				System.out.println("\n");
 
-//				 For loop inside for loop:
+//				For loop inside for loop:
 				for (String DpS : DepSta) {
 
 					System.out.println(DpS + " Department");
@@ -301,24 +300,28 @@ public class Main {
 				}
 
 				System.out.println("\n");
-//				 For loop inside for loop:
+
+//				For loop inside for loop:
 				for (Department D : newDept) {
 
 					System.out.println("Assigned in " + D.getName() + " Department");
 
-//					 print the incremented counter variable value
+//					print the incremented counter variable value in for-each loop:
 					System.out.println("--------------------------------------------");
 					System.out.println("Teacher Number" + " #" + counter);
 
+//					Using for-each loop for Teacher input:
 					for (Teacher T : D.newTech) {
 						System.out.println("Teacher is name " + T.getName());
 						System.out.println("Holding ID " + T.getId());
 
+//						Using for-each loop for Student input:
 						for (Student S : T.newStu) {
 							System.out.println("Have Student named " + S.getName());
 							System.out.println("his ID " + S.getId());
 							System.out.println("at age of " + S.getAge());
 
+//							Using for-each loop for Course & Mark input:
 							for (Course C : S.newCrs) {
 								System.out.println("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
 								System.out.println(
@@ -329,14 +332,13 @@ public class Main {
 						}
 					}
 				}
-
 			}
 
 			else if (choice == 3) {
 
 				try {
 					FileWriter MyInputs = new FileWriter("History Inputs.txt");
-//					 increment counter variable
+//					increment counter variable
 					counter = counter + 1;
 
 					MyInputs.write("\n");
@@ -344,22 +346,26 @@ public class Main {
 					MyInputs.write("\n");
 					MyInputs.write("Located on " + Scl.getLocation());
 					MyInputs.write("\n");
-//					 For loop inside for loop:
+//					For loop inside for loop:
 					for (Department D1 : newDept) {
 
 						MyInputs.write("Assigned in " + D1.getName() + " Department");
 						MyInputs.write("\n");
-//						 print the incremented counter variable value
+
+//						print the incremented counter variable value
 						MyInputs.write("--------------------------------------------");
 						MyInputs.write("\n");
 						MyInputs.write("Teacher Number" + " #" + counter);
 						MyInputs.write("\n");
+
+//						Using for-each loop for Teacher input:
 						for (Teacher T : D1.newTech) {
 							MyInputs.write("Teacher is name " + T.getName());
 							MyInputs.write("\n");
 							MyInputs.write("Holding ID " + T.getId());
 							MyInputs.write("\n");
 
+//							Using for-each loop for Student input:
 							for (Student S : T.newStu) {
 								MyInputs.write("Have Student named " + S.getName());
 								MyInputs.write("\n");
@@ -368,6 +374,7 @@ public class Main {
 								MyInputs.write("at age of " + S.getAge());
 								MyInputs.write("\n");
 
+//								Using for-each loop for Course & Mark input:
 								for (Course C : S.newCrs) {
 									MyInputs.write("Assigned to teach " + C.getName() + " Holding ID " + C.getId());
 									MyInputs.write("\n");
@@ -380,6 +387,7 @@ public class Main {
 							}
 						}
 					}
+
 					MyInputs.close();
 					System.out.println("Successfully wrote to the file.");
 					System.out.println("\n");
@@ -392,35 +400,33 @@ public class Main {
 			}
 
 			else if (choice == 4) {
-//				 File path
+//				File path
 				File ReadFile = new File("C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
 
-//				 Creating an object of BufferedReader class
+//				Creating an object of BufferedReader class
 				BufferedReader br = new BufferedReader(new FileReader(ReadFile));
 
-//				 Declaring a string variable
+//				Declaring a string variable
 				String st;
 
-//				 Condition holds true till
-//				 there is character in a string
+//				Condition holds true till
+//				there is character in a string
 				while ((st = br.readLine()) != null)
 
-//				 Print the string
+//				Print the string
 					System.out.println(st);
-
 			}
 
 			else if (choice == 5) {
-//				Creation of File Descriptor for input file
-//				File SearchWord = new File("History Inputs.txt"); 
 
+//				Creation of File Descriptor for input file
 				File SearchWord = new File(
 						"C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
 
 //				Intialize the word Array
 				String[] words = null;
 
-//			    Creation of File Reader object
+//				Creation of File Reader object
 				FileReader fr = new FileReader(SearchWord);
 
 //				Creation of BufferedReader object
@@ -429,16 +435,16 @@ public class Main {
 				String s;
 
 				System.out.println("Please Enter the word you want to search:");
-//			    Input word to be searched
+//				Input word to be searched
 				String WordInput = sc.next();
 
-//			    Intialize the word to zero
+//				Intialize the word to zero
 				int count = 0;
 
-//			    Reading Content from the file
+//				Reading Content from the file
 				while ((s = br.readLine()) != null) {
 
-//			   	Split the word using space
+//				Split the word using space
 					words = s.split(" ");
 
 //			 	Search for the given word
@@ -449,7 +455,7 @@ public class Main {
 					}
 				}
 
-//			    Check for count not equal to zero
+//				Check for count not equal to zero
 				if (count != 0) {
 					System.out.println("\n");
 					System.out.println("--------------------------------------------------");
@@ -466,15 +472,12 @@ public class Main {
 					System.out.println("\n");
 
 				}
-
 				fr.close();
 			}
 
-//			 To Print out the data:
+//			To Print out the data:
 			else if (choice == 6) {
 				try {
-//					File ReadFile = new File(
-//							"C:\\Users\\Lenovo\\eclipse-workspace\\Mohammed_AlHatmi\\History Inputs.txt");
 
 					FileOutputStream EncryOut = new FileOutputStream("Encrypted File.txt");
 					ObjectOutputStream ABC = new ObjectOutputStream(EncryOut);
@@ -502,16 +505,16 @@ public class Main {
 					In.close();
 					EncryIn.close();
 
-//					 increment counter variable
+//					increment counter variable
 					counter5 = counter5 + 1;
 
 					System.out.println("\n");
-//					 For loop inside for loop:
+//					For loop inside for loop:
 					for (Department D : newDept) {
 
 						System.out.println("Assigned in " + D.getName() + " Department");
 
-//						 print the incremented counter variable value
+//						print the incremented counter variable value
 						System.out.println("--------------------------------------------");
 						System.out.println("Teacher Number" + " #" + counter5);
 
@@ -537,29 +540,28 @@ public class Main {
 
 				} catch (IOException z) {
 					z.printStackTrace();
+
 				} catch (ClassNotFoundException y) {
 					System.out.println("Class not found");
 					y.printStackTrace();
 					return;
-
 				}
-
 			}
 
-//			 Exiting the menu:
+//			Exiting the menu:
 			else if (choice == 7) {
 				i = false;
 
 				System.out.println("See you next time!");
 			}
 
-//			 When Entering larger value:
+//			When Entering larger value:
 			else {
 				System.out.println("Re-Enter the right value.");
 			}
 
-//			 Closing sc Scanner:
-//			 sc.close();
+//			Closing sc Scanner:
+//			sc.close();
 		}
 	}
 }
